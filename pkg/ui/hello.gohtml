@@ -1,0 +1,26 @@
+{{- /*gotype: github.com/areknoster/gopherdir/pkg/ui.DirBrowser*/ -}}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Remote directory manager</title>
+    <meta name="description" content="UI for managing directory in remote system">
+    <meta name="author" content="Arkadiusz Noster">
+
+
+</head>
+
+<body>
+    <h1>Remote directory manager</h1>
+    <ul>
+        {{range .Files}}
+        <li>
+            {{.Name}}
+            <a href="files/{{.Name}}">Download</a>
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>

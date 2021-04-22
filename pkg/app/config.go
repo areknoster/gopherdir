@@ -2,6 +2,7 @@ package app
 
 import (
 	"flag"
+
 	"github.com/kelseyhightower/envconfig"
 	"go.uber.org/zap"
 )
@@ -10,7 +11,6 @@ import (
 func LoadConfig(logger *zap.Logger, cfg interface{}) {
 	if flag.Lookup("help") != nil {
 		envconfig.Usage("", cfg)
-
 	}
 	err := envconfig.Process("", cfg)
 	if err != nil {

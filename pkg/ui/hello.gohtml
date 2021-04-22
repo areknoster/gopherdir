@@ -14,11 +14,20 @@
 
 <body>
     <h1>Remote directory manager</h1>
+
+    <section>
+        <h2>Upload file</h2>
+        <form enctype="multipart/form-data" action="/file" method="post">
+            <input type="file" name="upload_file">
+            <input type="submit">
+        </form>
+    </section>
+    <h2>Download files</h2>
     <ul>
         {{range .Files}}
         <li>
             {{.Name}}
-            <a href="files/{{.Name}}">Download</a>
+            <a href="file/{{.Name}}" download>Download</a>
         </li>
         {{end}}
     </ul>
